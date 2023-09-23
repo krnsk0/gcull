@@ -7,8 +7,8 @@
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
     "test": "vitest --coverage",
-    "lint": "eslint .",
-    "format": "prettier --write .",
+    "lint": "eslint --ignore-path ./.lintignore .",
+    "format": "prettier --ignore-path ./.lintignore --write .",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {

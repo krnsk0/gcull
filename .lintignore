@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+diist/
+README.md
+LICENSE
+.lintignore
+package-lock.json
+.nvmrc
