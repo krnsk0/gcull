@@ -11,7 +11,10 @@ vi.mock('prompts', () => {
 
 describe('makeMenu', () => {
   it('should create a multiselect menu', () => {
-    makeMenu({ branches: [], currentBranch: '' });
+    makeMenu(
+      { branches: [], currentBranch: '', mainBranch: '' },
+      { branches: [] }
+    );
     expect(prompts).toHaveBeenCalledWith(
       expect.objectContaining({
         type: 'multiselect',
@@ -23,14 +26,15 @@ describe('makeMenu', () => {
     const branches: GitBranchOutput = {
       branches: ['test0', 'test1', 'test2'],
       currentBranch: '',
+      mainBranch: '',
     };
-    makeMenu(branches);
+    makeMenu(branches, { branches: [] });
     expect(prompts).toHaveBeenCalledWith(
       expect.objectContaining({
         choices: [
-          { title: 'test0', value: 'test0', disabled: false },
-          { title: 'test1', value: 'test1', disabled: false },
-          { title: 'test2', value: 'test2', disabled: false },
+          { title: 'test0', value: 'test0', disabled: false, selected: false },
+          { title: 'test1', value: 'test1', disabled: false, selected: false },
+          { title: 'test2', value: 'test2', disabled: false, selected: false },
         ],
       })
     );
@@ -40,14 +44,38 @@ describe('makeMenu', () => {
     const branches: GitBranchOutput = {
       branches: ['test0', 'test1', 'test2'],
       currentBranch: 'test0',
+      mainBranch: '',
     };
-    makeMenu(branches);
+    makeMenu(branches, { branches: [] });
     expect(prompts).toHaveBeenCalledWith(
       expect.objectContaining({
         choices: [
-          { title: 'test0', value: 'test0', disabled: true },
-          { title: 'test1', value: 'test1', disabled: false },
-          { title: 'test2', value: 'test2', disabled: false },
+          { title: 'test0', value: 'test0', disabled: true, selected: false },
+          { title: 'test1', value: 'test1', disabled: false, selected: false },
+          { title: 'test2', value: 'test2', disabled: false, selected: false },
+        ],
+      })
+    );
+  });
+
+  it('should annotate and select merged branches', () => {
+    const branches: GitBranchOutput = {
+      branches: ['test0', 'test1', 'test2'],
+      currentBranch: '',
+      mainBranch: '',
+    };
+    makeMenu(branches, { branches: ['test1'] });
+    expect(prompts).toHaveBeenCalledWith(
+      expect.objectContaining({
+        choices: [
+          { title: 'test0', value: 'test0', disabled: false, selected: false },
+          {
+            title: 'test1 (merged)',
+            value: 'test1',
+            disabled: false,
+            selected: true,
+          },
+          { title: 'test2', value: 'test2', disabled: false, selected: false },
         ],
       })
     );
