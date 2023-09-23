@@ -7,10 +7,12 @@
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
     "test": "vitest --coverage",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "prettier --write && npm run lint --fix"
+    "pre-commit": "npm run format && npm run lint --fix"
   },
   "bin": {
     "gcull": "./dist/index.js"

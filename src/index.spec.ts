@@ -3,6 +3,6 @@ import { add } from './index';
 
 describe('the add func', () => {
   it('should add two numbers', () => {
-    // expect(add(1, 1)).toBe(2);
+    expect(add(1, 1)).toBe(2);
   });
 });
