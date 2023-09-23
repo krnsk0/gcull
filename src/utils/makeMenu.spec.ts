@@ -10,6 +10,15 @@ vi.mock('prompts', () => {
 });
 
 describe('makeMenu', () => {
+  it('should create a multiselect menu', () => {
+    makeMenu({ branches: [], currentBranch: '' });
+    expect(prompts).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: 'multiselect',
+      })
+    );
+  });
+
   it('should invoke prompts with the right choices given some git branches', () => {
     const branches: GitBranches = {
       branches: ['test0', 'test1', 'test2'],
