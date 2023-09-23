@@ -9,6 +9,9 @@
     "test": "vitest --coverage",
     "lint": "eslint ."
   },
+  "simple-git-hooks": {
+    "pre-commit": "prettier --write && npm run lint --fix"
+  },
   "bin": {
     "gcull": "./dist/index.js"
   },
@@ -36,6 +39,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-vitest": "^0.3.1",
     "prettier": "^3.0.3",
+    "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"
   }
