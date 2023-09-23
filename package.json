@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/krnsk0/cull#readme",
   "devDependencies": {
+    "@types/shelljs": "^0.8.12",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "@vitest/coverage-istanbul": "^0.34.5",
@@ -48,5 +49,9 @@
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"
+  },
+  "dependencies": {
+    "kleur": "^4.1.5",
+    "shelljs": "^0.8.5"
   }
 }
