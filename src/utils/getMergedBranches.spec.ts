@@ -14,7 +14,9 @@ describe('getMergedBranches', () => {
       stdout: '',
     });
     getMergedBranches('foo');
-    expect(exec).toHaveBeenCalledWith('git branch --merged foo');
+    expect(exec).toHaveBeenCalledWith('git branch --merged foo', {
+      silent: true,
+    });
   });
 
   it('should exclude master and main', () => {

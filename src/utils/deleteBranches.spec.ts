@@ -15,7 +15,7 @@ describe('deleteBranches', () => {
     (exec as Mock).mockReturnValue({ code: 0 });
     deleteBranches(['test1', 'test2']);
     expect(exec).toHaveBeenCalledWith('git branch -D test1 test2');
-    expect(console.log).toHaveBeenCalledWith('Deleted 2 branches');
+    expect(console.log).toHaveBeenCalledWith('Deleted branches: 2');
   });
 
   it('should log on failure', () => {

@@ -7,7 +7,7 @@ export const deleteBranches = (branchesToDelete: string[]) => {
   const { code } = exec(`git branch -D ${branchesToDeleteString}`);
 
   if (code === 0) {
-    console.log(kleur.green(`Deleted ${branchesToDelete.length} branches`));
+    console.log(kleur.green(`Deleted branches: ${branchesToDelete.length}`));
   } else {
     console.log(kleur.red(`Error deleting branches`));
   }
