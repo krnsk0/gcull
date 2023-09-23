@@ -1,9 +1,10 @@
 {
-  "name": "cull",
+  "name": "gcull",
   "version": "1.0.0",
   "description": "interactive git branch deleter",
   "main": "dist/index.js",
   "scripts": {
+    "start": "npm run build && node dist/index.js",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

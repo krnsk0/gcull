@@ -28,3 +28,7 @@ To start:
 ```bash
 gcull
 ```
+
+# Development
+The `dist` directory is committed to avoid a need for a post-install script when
+the package is installed globally. The `build` command will re-generate it.`
