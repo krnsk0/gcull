@@ -55,4 +55,20 @@ describe('getGitBranches', () => {
     });
     expect((await getGitBranches()).currentBranch).toBe('test1');
   });
+
+  describe('should identify the main branch', () => {
+    it('when it is master', async () => {
+      (exec as Mock).mockReturnValue({
+        stdout: `master\nmain\ntest1\ntest2`,
+      });
+      expect((await getGitBranches()).mainBranch).toBe('master');
+    });
+
+    it('when it is main', async () => {
+      (exec as Mock).mockReturnValue({
+        stdout: `main\nmaster\ntest1\ntest2`,
+      });
+      expect((await getGitBranches()).mainBranch).toBe('main');
+    });
+  });
 });

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { makeMenu } from './makeMenu';
 import prompts from 'prompts';
-import { GitBranches } from './getGitBranches';
+import { GitBranchOutput } from './getGitBranches';
 
 vi.mock('prompts', () => {
   return {
@@ -20,7 +20,7 @@ describe('makeMenu', () => {
   });
 
   it('should invoke prompts with the right choices given some git branches', () => {
-    const branches: GitBranches = {
+    const branches: GitBranchOutput = {
       branches: ['test0', 'test1', 'test2'],
       currentBranch: '',
     };
@@ -37,7 +37,7 @@ describe('makeMenu', () => {
   });
 
   it('should disable the current branch', () => {
-    const branches: GitBranches = {
+    const branches: GitBranchOutput = {
       branches: ['test0', 'test1', 'test2'],
       currentBranch: 'test0',
     };

@@ -1,8 +1,8 @@
 import prompts from 'prompts';
 import kleur from 'kleur';
-import { GitBranches } from './getGitBranches';
+import { GitBranchOutput } from './getGitBranches';
 
-export const makeMenu = (gitBranches: GitBranches) => {
+export const makeMenu = (gitBranches: GitBranchOutput) => {
   return prompts({
     type: 'multiselect',
     name: 'branches',
