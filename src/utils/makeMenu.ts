@@ -1,6 +1,6 @@
 import prompts from 'prompts';
 import kleur from 'kleur';
-import { GitBranchOutput } from './getGitBranches';
+import { GitBranchOutput } from './getBranches';
 
 export const makeMenu = (gitBranches: GitBranchOutput) => {
   return prompts({

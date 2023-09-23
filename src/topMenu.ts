@@ -1,8 +1,8 @@
-import { getGitBranches } from './utils/getGitBranches';
+import { getBranches } from './utils/getBranches';
 import { makeMenu } from './utils/makeMenu';
 
 export const menu = async () => {
-  const branches = await getGitBranches();
+  const branches = await getBranches();
   const result = await makeMenu(branches);
   console.log('result: ', result);
 };

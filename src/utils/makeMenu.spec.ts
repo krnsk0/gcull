@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { makeMenu } from './makeMenu';
 import prompts from 'prompts';
-import { GitBranchOutput } from './getGitBranches';
+import { GitBranchOutput } from './getBranches';
 
 vi.mock('prompts', () => {
   return {
