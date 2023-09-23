@@ -7,7 +7,7 @@
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
     "test": "vitest --coverage",
-    "test:ci": "vitest --coverage --ci",
+    "test:ci": "vitest run --coverage",
     "lint:files": "eslint --ignore-path ./.lintignore",
     "lint": "npm run lint:files .",
     "format:files": "prettier --ignore-path ./.lintignore --write",
