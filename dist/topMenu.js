@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.menu = void 0;
+const deleteBranches_1 = require("./utils/deleteBranches");
 const getBranches_1 = require("./utils/getBranches");
 const getMergedBranches_1 = require("./utils/getMergedBranches");
 const makeMenu_1 = require("./utils/makeMenu");
@@ -17,7 +18,7 @@ const menu = () => __awaiter(void 0, void 0, void 0, function* () {
     const allBranches = yield (0, getBranches_1.getBranches)();
     const mergedBranches = yield (0, getMergedBranches_1.getMergedBranches)(allBranches.mainBranch);
     const promptResult = yield (0, makeMenu_1.makeMenu)(allBranches, mergedBranches);
-    console.log('promptResult: ', promptResult);
+    (0, deleteBranches_1.deleteBranches)(promptResult.branches);
 });
 exports.menu = menu;
 //# sourceMappingURL=topMenu.js.map

@@ -8,8 +8,10 @@ export const deleteBranches = async (branchesToDelete: string[]) => {
   const { code } = exec(`git branch -D ${branchesToDeleteString}`);
 
   if (code === 0) {
-    console.log(kleur.green(`Deleted:\n${branchesToDeleteNewline}`));
+    console.log(`${kleur.green(`Deleted:`)}\n${branchesToDeleteNewline}`);
   } else {
-    console.log(kleur.red(`Failed to delete:\n${branchesToDeleteNewline}`));
+    console.log(
+      `${kleur.red(`Failed to delete:`)}\n${branchesToDeleteNewline}`
+    );
   }
 };
