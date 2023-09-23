@@ -22,7 +22,7 @@ Interactive CLI tool. Shows a list of local branches; you pick which ones to del
 
 ## Installation
 
-Requires `node` > v14
+Requires `node` > v18
 
 ```bash
 npm i -g gcull
