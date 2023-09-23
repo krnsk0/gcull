@@ -1,0 +1,28 @@
+{
+  "name": "cull",
+  "version": "1.0.0",
+  "description": "interactive git branch deleter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krnsk0/cull.git"
+  },
+  "keywords": [
+    "git",
+    "cli",
+    "interactive",
+    "branch"
+  ],
+  "author": "jkurinsky@fastmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krnsk0/cull/issues"
+  },
+  "homepage": "https://github.com/krnsk0/cull#readme",
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}
