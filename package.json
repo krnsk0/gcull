@@ -17,7 +17,7 @@
   },
   "lint-staged": {
     "*.{js,ts,md,json}": "prettier --write",
-    "*.{js,ts}": "eslint --fix"
+    "*.{js,ts}": "npm run lint --fix"
   },
   "bin": {
     "gcull": "./dist/index.js"
