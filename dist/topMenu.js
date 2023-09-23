@@ -8,27 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.menu = void 0;
-const prompts_1 = __importDefault(require("prompts"));
 const getGitBranches_1 = require("./utils/getGitBranches");
-const kleur_1 = __importDefault(require("kleur"));
-const makeMenu = (choices) => {
-    return (0, prompts_1.default)({
-        type: 'multiselect',
-        name: 'branches',
-        message: `Which branches should we delete?`,
-        instructions: `\n${kleur_1.default.green('space')} = select, ${kleur_1.default.green('enter')} = submit, ${kleur_1.default.green('a')} = select all`,
-        choices: choices.map((choice) => ({ title: choice, value: choice })),
-    });
-};
+const makeMenu_1 = require("./utils/makeMenu");
 const menu = () => __awaiter(void 0, void 0, void 0, function* () {
     const branches = yield (0, getGitBranches_1.getGitBranches)();
-    const result = yield makeMenu(branches);
+    const result = yield (0, makeMenu_1.makeMenu)(branches);
     console.log('result: ', result);
 });
 exports.menu = menu;
-//# sourceMappingURL=menu.js.map
+//# sourceMappingURL=topMenu.js.map

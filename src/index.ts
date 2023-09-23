@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 import kleur from 'kleur';
-import { menu } from './menu';
+import { menu as topMenu } from './topMenu';
 
-menu()
+topMenu()
   .then(() => {
     console.log(kleur.grey('Exiting gcull'));
     process.exit(1);

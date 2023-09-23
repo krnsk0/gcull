@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const kleur_1 = __importDefault(require("kleur"));
-const menu_1 = require("./menu");
-(0, menu_1.menu)()
+const topMenu_1 = require("./topMenu");
+(0, topMenu_1.menu)()
     .then(() => {
     console.log(kleur_1.default.grey('Exiting gcull'));
     process.exit(1);
