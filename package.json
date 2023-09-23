@@ -8,13 +8,7 @@
     "build": "tsc",
     "test": "vitest --coverage",
     "lint": "eslint .",
-    "postinstall": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run build && npm run test"
-    }
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,ts,md,json}": "prettier --write",
