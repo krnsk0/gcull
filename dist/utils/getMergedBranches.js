@@ -1,19 +1,12 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMergedBranches = void 0;
 const shelljs_1 = require("shelljs");
 const constants_1 = require("../constants");
-const getMergedBranches = (mainBranchName) => __awaiter(void 0, void 0, void 0, function* () {
-    const { stdout } = (0, shelljs_1.exec)(`git branch --merged ${mainBranchName}`);
+const getMergedBranches = (mainBranchName) => {
+    const { stdout } = (0, shelljs_1.exec)(`git branch --merged ${mainBranchName}`, {
+        silent: true,
+    });
     return {
         branches: stdout
             .split('\n')
@@ -21,6 +14,6 @@ const getMergedBranches = (mainBranchName) => __awaiter(void 0, void 0, void 0, 
             .map((branch) => branch.replace('* ', ''))
             .filter((branch) => !constants_1.MAIN_BRANCHES.includes(branch)),
     };
-});
+};
 exports.getMergedBranches = getMergedBranches;
 //# sourceMappingURL=getMergedBranches.js.map

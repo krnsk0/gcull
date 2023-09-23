@@ -5,10 +5,12 @@ export interface MergedGitBranches {
   branches: string[];
 }
 
-export const getMergedBranches = async (
+export const getMergedBranches = (
   mainBranchName: string
-): Promise<MergedGitBranches> => {
-  const { stdout } = exec(`git branch --merged ${mainBranchName}`);
+): MergedGitBranches => {
+  const { stdout } = exec(`git branch --merged ${mainBranchName}`, {
+    silent: true,
+  });
   return {
     branches: stdout
       .split('\n')

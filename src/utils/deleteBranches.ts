@@ -1,7 +1,7 @@
 import { exec } from 'shelljs';
 import kleur from 'kleur';
 
-export const deleteBranches = async (branchesToDelete: string[]) => {
+export const deleteBranches = (branchesToDelete: string[]) => {
   if (branchesToDelete.length === 0) return;
   const branchesToDeleteString = branchesToDelete.join(' ');
   const { code } = exec(`git branch -D ${branchesToDeleteString}`);

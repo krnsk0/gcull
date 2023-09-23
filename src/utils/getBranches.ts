@@ -8,8 +8,8 @@ export interface GitBranchOutput {
   mainBranch: string;
 }
 
-export const getBranches = async (): Promise<GitBranchOutput> => {
-  const { stdout } = exec('git branch');
+export const getBranches = (): GitBranchOutput => {
+  const { stdout } = exec('git branch', { silent: true });
   const allBranches = stdout.split('\n').map((branch) => branch.trim());
 
   return {
