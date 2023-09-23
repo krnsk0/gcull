@@ -7,12 +7,18 @@
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
     "test": "vitest --coverage",
-    "lint": "eslint --ignore-path ./.lintignore .",
-    "format": "prettier --ignore-path ./.lintignore --write .",
+    "lint:files": "eslint --ignore-path ./.lintignore",
+    "lint": "npm run lint:files .",
+    "format:files": "prettier --ignore-path ./.lintignore --write",
+    "format": "npm run format:files .",
+    "lint-staged": "lint-staged",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run format && npm run lint --fix"
+    "pre-commit": "npm run lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": "npm run format:files"
   },
   "bin": {
     "gcull": "./dist/index.js"
@@ -40,6 +46,7 @@
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-vitest": "^0.3.1",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",

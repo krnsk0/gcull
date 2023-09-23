@@ -1,6 +1,7 @@
 node_modules/
 coverage/
-diist/
+dist/
+.vscode/
 README.md
 LICENSE
 .lintignore
