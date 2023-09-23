@@ -11,11 +11,10 @@
     "lint": "npm run lint:files .",
     "format:files": "prettier --ignore-path ./.lintignore --write",
     "format": "npm run format:files .",
-    "lint-staged": "lint-staged",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run lint-staged"
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "*.{js,ts,json}": "npm run format:files"
