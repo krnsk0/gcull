@@ -9,16 +9,20 @@ vi.mock('shelljs', () => {
   };
 });
 
+vi.spyOn(global.console, 'log');
+
 describe('bailIfGitNotFound', () => {
   it('should exit if git is not found', () => {
     (which as Mock).mockReturnValueOnce(false);
     bailIfGitNotFound();
     expect(exit).toHaveBeenCalled();
+    expect(console.log).toHaveBeenCalledWith('This script requires git');
   });
 
   it('should not exit if git is found', () => {
     (which as Mock).mockReturnValueOnce(true);
     bailIfGitNotFound();
     expect(exit).not.toHaveBeenCalled();
+    expect(console.log).not.toHaveBeenCalled();
   });
 });
