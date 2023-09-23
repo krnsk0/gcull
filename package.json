@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest --coverage"
   },
   "bin": {
     "gcull": "./dist/index.js"
@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/krnsk0/cull#readme",
   "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.34.5",
     "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.5"
   }
 }

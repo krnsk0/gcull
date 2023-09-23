@@ -30,5 +30,4 @@ gcull
 ```
 
 # Development
-The `dist` directory is committed to avoid a need for a post-install script when
-the package is installed globally. The `build` command will re-generate it.`
+The `dist` directory is committed to avoid a need for a post-install script when the package is installed globally. The `build` command will re-generate it. The `run` command is intended to allow rapid development through execution of the tool when builds complete; no watch command is provided. Tests use `vitest` (without `vite`).
