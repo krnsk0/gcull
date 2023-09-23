@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "build": "tsc",
-    "test": "vitest --coverage"
+    "test": "vitest --coverage",
+    "lint": "eslint ."
   },
   "bin": {
     "gcull": "./dist/index.js"
@@ -28,7 +29,12 @@
   },
   "homepage": "https://github.com/krnsk0/cull#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
     "@vitest/coverage-istanbul": "^0.34.5",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vitest": "^0.3.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"

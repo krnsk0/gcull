@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["vitest"],
+  "env": { "browser": false, "node": true },
+  "rules": {},
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["dist/", "node_modules/", "vitest.config.js"],
+  "overrides": [
+    {
+      "files": ["**/*.test.ts", "**/*.spec.ts"], // or any other pattern
+      "plugins": ["vitest"],
+      "extends": ["plugin:vitest/recommended"]
+    }
+  ]
+}
