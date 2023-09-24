@@ -22,10 +22,7 @@
   "bin": {
     "gcull": "./dist/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/krnsk0/cull.git"
-  },
+  "repository": "git@github.com:krnsk0/gcull.git",
   "keywords": [
     "git",
     "cli",
