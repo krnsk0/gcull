@@ -23,6 +23,9 @@
     "gcull": "./dist/index.js"
   },
   "repository": "git@github.com:krnsk0/gcull.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "git",
     "cli",
