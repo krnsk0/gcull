@@ -12,7 +12,7 @@ const deleteBranches = (branchesToDelete) => {
     const branchesToDeleteString = branchesToDelete.join(' ');
     const { code } = (0, shelljs_1.exec)(`git branch -D ${branchesToDeleteString}`);
     if (code === 0) {
-        console.log(kleur_1.default.green(`Deleted ${branchesToDelete.length} branches`));
+        console.log(kleur_1.default.green(`Deleted branches: ${branchesToDelete.length}`));
     }
     else {
         console.log(kleur_1.default.red(`Error deleting branches`));
