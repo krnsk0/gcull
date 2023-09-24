@@ -30,7 +30,7 @@ npm i -g gcull
 
 ## Usage
 
-You'll of course need a working version of `git` in your path.
+You'll need a working version of `git` in your path.
 
 To start:
 
@@ -38,6 +38,4 @@ To start:
 gcull
 ```
 
-# Development
-
-The `dist` directory is committed to avoid a need for a post-install script when the package is installed globally. The `build` command will re-generate it. The `run` command is intended to allow rapid development through execution of the tool when builds complete; no watch command is provided. Tests use `vitest` (without `vite`).
+ Already-merged branches are selected by default, but can be de-selected. The current branch will be disabled in the menu. It's best to check out `main`/`master` and to fetch the latest commits before invoking this tool.
