@@ -1,6 +1,6 @@
 {
   "name": "gcull",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "interactive git branch deleter",
   "main": "dist/index.js",
   "scripts": {
@@ -38,9 +38,9 @@
   "author": "jkurinsky@fastmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/krnsk0/cull/issues"
+    "url": "https://github.com/krnsk0/gcull/issues"
   },
-  "homepage": "https://github.com/krnsk0/cull#readme",
+  "homepage": "https://github.com/krnsk0/gcull#readme",
   "devDependencies": {
     "@types/prompts": "^2.4.4",
     "@types/shelljs": "^0.8.12",
